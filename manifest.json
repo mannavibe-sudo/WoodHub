@@ -1,6 +1,6 @@
 {
-  "name": "WoodHub",
-  "short_name": "WoodHub",
+  "name": "Prakritik India",
+  "short_name": "Prakritik India",
   "description": "Log book & payment tracker for Euca Chips / Euco Wood transport",
   "start_url": "./index.html",
   "display": "standalone",

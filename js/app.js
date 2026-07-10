@@ -143,14 +143,14 @@ async function renderDashboard(view) {
   view.innerHTML = `
     <div class="section-title">Overview</div>
     <div class="stat-grid">
-      <div class="stat-tile"><div class="label">Total Trucks</div><div class="value">${totalTrucks}</div></div>
-      <div class="stat-tile"><div class="label">This Month</div><div class="value">${thisMonthTrucks}</div></div>
-      <div class="stat-tile"><div class="label">Total Margin</div><div class="value ${totalMargin >= 0 ? "positive" : "negative"}">${fmtMoney(totalMargin)}</div></div>
-      <div class="stat-tile"><div class="label">Pending from ITC</div><div class="value ${pending > 0 ? "negative" : ""}">${fmtMoney(pending)}</div></div>
-      <div class="stat-tile"><div class="label">Total Received</div><div class="value">${fmtMoney(totalReceived)}</div></div>
-      <div class="stat-tile"><div class="label">Total Billed</div><div class="value">${fmtMoney(totalBilled)}</div></div>
-      <div class="stat-tile"><div class="label">Total GST</div><div class="value">${fmtMoney(totalGst)}</div></div>
-      <div class="stat-tile"><div class="label">Euca Chips / Euco Wood</div><div class="value" style="font-size:1rem;">${count(chips)} / ${count(wood)}</div></div>
+      <div class="stat-tile"><span class="icon-badge">🚚</span><div class="label">Total Trucks</div><div class="value">${totalTrucks}</div></div>
+      <div class="stat-tile"><span class="icon-badge">📅</span><div class="label">This Month</div><div class="value">${thisMonthTrucks}</div></div>
+      <div class="stat-tile"><span class="icon-badge">💰</span><div class="label">Total Margin</div><div class="value ${totalMargin >= 0 ? "positive" : "negative"}">${fmtMoney(totalMargin)}</div></div>
+      <div class="stat-tile"><span class="icon-badge">⏳</span><div class="label">Pending from ITC</div><div class="value ${pending > 0 ? "negative" : ""}">${fmtMoney(pending)}</div></div>
+      <div class="stat-tile"><span class="icon-badge">✅</span><div class="label">Total Received</div><div class="value">${fmtMoney(totalReceived)}</div></div>
+      <div class="stat-tile"><span class="icon-badge">🧾</span><div class="label">Total Billed</div><div class="value">${fmtMoney(totalBilled)}</div></div>
+      <div class="stat-tile"><span class="icon-badge">🧮</span><div class="label">Total GST</div><div class="value">${fmtMoney(totalGst)}</div></div>
+      <div class="stat-tile"><span class="icon-badge">🌲</span><div class="label">Euca Chips / Euco Wood</div><div class="value" style="font-size:1rem;">${count(chips)} / ${count(wood)}</div></div>
     </div>
 
     <div class="section-title">Recent Entries</div>

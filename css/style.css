@@ -17,6 +17,8 @@
   --amber: #b8860b;
   --radius: 18px;
   --shadow: 0 8px 24px rgba(58, 42, 30, 0.12), 0 2px 6px rgba(58, 42, 30, 0.08);
+  --font-text: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-display: "Manrope", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   font-size: 16px;
 }
 
@@ -24,7 +26,9 @@
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-family: var(--font-text);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
   color: var(--ink);
   padding-bottom: 72px; /* space for bottom nav on mobile */
   min-height: 100vh;
@@ -75,9 +79,10 @@ a { color: inherit; }
 }
 
 .app-header .brand {
-  font-weight: 700;
-  font-size: 1.15rem;
-  letter-spacing: 0.02em;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.2rem;
+  letter-spacing: -0.01em;
   display: flex;
   align-items: center;
   gap: 8px;
@@ -217,6 +222,25 @@ main {
   pointer-events: none;
 }
 
+.stat-tile .icon-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 30px;
+  height: 30px;
+  border-radius: 9px;
+  background: rgba(169, 113, 63, 0.16);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  line-height: 1;
+}
+
+@media (min-width: 620px) {
+  .stat-tile .icon-badge { width: 38px; height: 38px; top: 16px; right: 16px; border-radius: 11px; font-size: 1.25rem; }
+}
+
 .stat-tile .label {
   font-size: 0.72rem;
   color: var(--ink-soft);
@@ -247,15 +271,18 @@ main {
 }
 
 .stat-tile .value {
+  font-family: var(--font-display);
   font-size: clamp(1.15rem, 6vw, 2.6rem);
   font-weight: 800;
   color: var(--wood-900);
-  letter-spacing: -0.01em;
+  letter-spacing: -0.02em;
   position: relative;
   line-height: 1.15;
   overflow-wrap: break-word;
   word-break: break-word;
   hyphens: auto;
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1, "cv05" 1;
 }
 
 @media (min-width: 1100px) {
@@ -266,8 +293,9 @@ main {
 .stat-tile .value.negative { color: var(--red); }
 
 .section-title {
-  font-size: 1.1rem;
-  font-weight: 700;
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 800;
   color: var(--wood-900);
   margin: 26px 0 12px;
   letter-spacing: -0.01em;
@@ -423,9 +451,11 @@ input:focus, select:focus {
 }
 
 .entry-card .truck {
-  font-weight: 700;
+  font-family: var(--font-display);
+  font-weight: 800;
   color: var(--wood-900);
   font-size: 1.15rem;
+  letter-spacing: -0.01em;
 }
 
 .entry-card .material-tag {
@@ -451,7 +481,12 @@ input:focus, select:focus {
 }
 
 .entry-card .figures .f-label { color: var(--ink-soft); margin-right: 4px; }
-.entry-card .figures .f-value { font-weight: 600; }
+.entry-card .figures .f-value {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1;
+}
 
 .empty-state {
   text-align: center;
@@ -482,8 +517,11 @@ input:focus, select:focus {
 }
 
 .login-card h1 {
+  font-family: var(--font-display);
+  font-weight: 800;
   color: var(--wood-900);
-  font-size: 1.4rem;
+  font-size: 1.5rem;
+  letter-spacing: -0.01em;
   margin-bottom: 4px;
 }
 
